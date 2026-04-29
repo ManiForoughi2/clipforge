@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy — ClipForge</title>
+<style>
+:root { color-scheme: dark; }
+body { font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+       background:#0A0A0A; color:#F5F5F5; margin:0; line-height:1.6;
+       padding:48px 24px; }
+.wrap { max-width:760px; margin:0 auto; }
+h1 { color:#FF2D55; font-size:32px; margin:0 0 8px; }
+h2 { color:#F5F5F5; font-size:20px; margin:32px 0 8px; border-top:1px solid #2A2A2A; padding-top:20px; }
+h3 { color:#F5F5F5; font-size:16px; margin:20px 0 6px; }
+p, li { color:#C8C8C8; }
+a { color:#25F4EE; }
+code { background:#1A1A1A; padding:2px 6px; border-radius:4px; font-size:13px; color:#F5F5F5; }
+.meta { color:#8A8A8A; font-style:italic; }
+.back { display:inline-block; margin-top:32px; color:#8A8A8A; text-decoration:none; }
+.back:hover { color:#F5F5F5; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Privacy Policy — ClipForge</h1>
+<p class="meta">Last updated: April 28, 2026</p>
+
+<p>ClipForge ("the app", "we", "our") is a macOS desktop application that helps creators assemble short-form videos and upload them to their own TikTok account. This Privacy Policy explains what data the app handles, where it is stored, and how you can remove it.</p>
+
+<h2>1. Operator</h2>
+<p>ClipForge is operated by Mani Foroughi. For privacy questions or data deletion requests, contact: <a href="mailto:maniforoughi2@gmail.com">maniforoughi2@gmail.com</a>.</p>
+
+<h2>2. Summary</h2>
+<ul>
+<li>ClipForge runs locally on your Mac. We do not operate servers that receive your personal data.</li>
+<li>We do not collect analytics, tracking identifiers, or advertising data.</li>
+<li>Credentials and access tokens are stored only in the macOS Keychain on your device.</li>
+<li>Data sent to third parties (TikTok, OpenAI, Pexels) is sent directly from your Mac to those services using API keys you provide.</li>
+</ul>
+
+<h2>3. Information ClipForge handles</h2>
+
+<h3>3.1 TikTok account data</h3>
+<p>When you click "Connect TikTok," the app launches TikTok's OAuth authorization page in your browser. After you authorize, TikTok returns an access token to a local loopback URL (<code>http://127.0.0.1:7842/callback</code>) on your Mac. The app then:</p>
+<ul>
+<li>Calls TikTok's <code>/v2/user/info/</code> endpoint once to fetch your TikTok username and avatar URL, which are displayed in the app so you can confirm which account is connected.</li>
+<li>Stores the access token, refresh token, and TikTok <code>open_id</code> in the macOS Keychain on your device.</li>
+</ul>
+<p>We request the following TikTok scopes:</p>
+<ul>
+<li><code>user.info.basic</code> — to display your username and avatar in the app.</li>
+<li><code>video.upload</code> — to send rendered videos to your TikTok inbox as drafts that you finalize inside the official TikTok app.</li>
+</ul>
+<p>ClipForge does not transmit your TikTok tokens or profile data to any server we operate. The data lives entirely on your Mac.</p>
+
+<h3>3.2 API keys you provide</h3>
+<p>ClipForge can use OpenAI (for caption generation) and Pexels (for stock footage). You enter your own API keys in Settings. Those keys are stored in the macOS Keychain on your device and are sent only to OpenAI and Pexels respectively when you use those features. We do not see, log, or transmit your keys.</p>
+
+<h3>3.3 Local files</h3>
+<p>Rendered videos, project files, and cached thumbnails are stored under <code>~/Library/Application Support/ClipForge</code> on your Mac. You can delete this folder at any time.</p>
+
+<h3>3.4 Information ClipForge does NOT collect</h3>
+<ul>
+<li>We do not collect your name, email, IP address, location, or device identifiers.</li>
+<li>We do not run analytics or telemetry.</li>
+<li>We do not use cookies (the app is not web-based).</li>
+<li>We do not sell or share data with advertisers.</li>
+</ul>
+
+<h2>4. Third-party services</h2>
+<p>When you use ClipForge, your Mac communicates directly with these services. Each service has its own privacy policy:</p>
+<ul>
+<li><strong>TikTok</strong> — videos you upload, TikTok account data: <a href="https://www.tiktok.com/legal/privacy-policy">https://www.tiktok.com/legal/privacy-policy</a></li>
+<li><strong>OpenAI</strong> — caption prompts you generate: <a href="https://openai.com/policies/privacy-policy">https://openai.com/policies/privacy-policy</a></li>
+<li><strong>Pexels</strong> — stock-media search queries: <a href="https://www.pexels.com/privacy-policy/">https://www.pexels.com/privacy-policy/</a></li>
+</ul>
+
+<h2>5. Data retention and deletion</h2>
+<p>Because ClipForge stores data only on your Mac, you control retention:</p>
+<ul>
+<li><strong>Disconnect TikTok</strong>: Settings → "Sign Out" removes the stored TikTok tokens from your Keychain. You should also revoke the app at <a href="https://www.tiktok.com/setting/account/data-permission">tiktok.com/setting/account/data-permission</a> ("Manage app permissions").</li>
+<li><strong>Remove API keys</strong>: Settings → "Clear" removes them from the Keychain.</li>
+<li><strong>Delete local data</strong>: remove <code>~/Library/Application Support/ClipForge</code>.</li>
+<li><strong>Uninstall</strong>: drag ClipForge from <code>/Applications</code> to the Trash.</li>
+</ul>
+
+<h2>6. Children</h2>
+<p>ClipForge is not directed at children under 13. Do not use the app if you are under the minimum age required by TikTok in your country.</p>
+
+<h2>7. Changes</h2>
+<p>We may update this policy. The "Last updated" date at the top reflects the current version. Material changes will be noted in the app's release notes.</p>
+
+<h2>8. Contact</h2>
+<p>Questions, complaints, or data deletion requests: <a href="mailto:maniforoughi2@gmail.com">maniforoughi2@gmail.com</a>.</p>
+
+<a class="back" href="../">← Back to ClipForge</a>
+
+</div>
+</body>
+</html>
