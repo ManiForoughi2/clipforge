@@ -3,31 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ClipForge</title>
+<title>ClipForge — short-form video assembly for Mac</title>
+<meta name="description" content="ClipForge is a macOS app for creators to assemble short-form videos from stock footage, voiceover, and captions, then upload them to their own TikTok account.">
 <style>
 :root { color-scheme: dark; }
-body { font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
-       background:#0A0A0A; color:#F5F5F5; margin:0;
-       display:flex; min-height:100vh; align-items:center; justify-content:center; padding:24px; }
-.card { max-width:560px; padding:40px; background:#141414; border:1px solid #2A2A2A; border-radius:16px; }
-h1 { margin:0 0 12px; font-size:32px; color:#FF2D55; }
-p { color:#8A8A8A; line-height:1.6; }
-.links { display:flex; gap:12px; margin-top:24px; flex-wrap:wrap; }
-a.btn { display:inline-block; padding:10px 18px; background:#1A1A1A; border:1px solid #2A2A2A;
-        border-radius:8px; color:#F5F5F5; text-decoration:none; font-size:14px; }
-a.btn:hover { background:#222; border-color:#3a3a3a; }
-.email { color:#25F4EE; }
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  background: #0A0A0A; color: #F5F5F5; margin: 0; line-height: 1.6;
+}
+.container { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+header {
+  padding: 80px 0 40px;
+  text-align: center;
+  background: radial-gradient(ellipse at top, rgba(255,45,85,0.12) 0%, transparent 60%);
+}
+.logo {
+  display: inline-block;
+  background: linear-gradient(135deg, #FF2D55, #25F4EE);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 56px; font-weight: 800; letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+.tagline { font-size: 22px; color: #C8C8C8; margin: 0 0 8px; font-weight: 500; }
+.platform { display: inline-flex; align-items: center; gap: 6px; font-size: 13px;
+            color: #8A8A8A; padding: 6px 14px; background: #141414;
+            border: 1px solid #2A2A2A; border-radius: 999px; margin-top: 16px; }
+
+section { padding: 60px 0; border-top: 1px solid #1A1A1A; }
+section h2 {
+  font-size: 28px; margin: 0 0 32px; color: #F5F5F5;
+  letter-spacing: -0.01em;
+}
+section p { color: #C8C8C8; }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.feature { padding: 24px; background: #141414; border: 1px solid #2A2A2A; border-radius: 12px; }
+.feature .icon { font-size: 24px; margin-bottom: 12px; }
+.feature h3 { margin: 0 0 8px; font-size: 17px; color: #F5F5F5; }
+.feature p { margin: 0; font-size: 14px; color: #8A8A8A; line-height: 1.5; }
+
+.steps { counter-reset: step; }
+.step {
+  display: flex; gap: 20px; padding: 20px 0;
+  border-bottom: 1px solid #1A1A1A;
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  flex-shrink: 0;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: #FF2D55; color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px;
+}
+.step-body h3 { margin: 4px 0 6px; font-size: 17px; color: #F5F5F5; }
+.step-body p { margin: 0; font-size: 14px; color: #8A8A8A; }
+
+.privacy-card {
+  background: #141414; border: 1px solid #2A2A2A; border-radius: 12px;
+  padding: 24px;
+}
+.privacy-card h3 { margin: 0 0 12px; font-size: 17px; color: #F5F5F5; }
+.privacy-card ul { margin: 0; padding-left: 20px; color: #8A8A8A; font-size: 14px; }
+.privacy-card li { margin-bottom: 6px; }
+
+footer {
+  padding: 40px 0 60px; border-top: 1px solid #1A1A1A;
+  text-align: center; color: #8A8A8A; font-size: 14px;
+}
+footer .links { margin-bottom: 16px; }
+footer .links a {
+  color: #C8C8C8; text-decoration: none;
+  display: inline-block; padding: 6px 14px; margin: 0 4px;
+  background: #141414; border: 1px solid #2A2A2A; border-radius: 999px;
+  font-size: 13px;
+}
+footer .links a:hover { background: #1A1A1A; color: #F5F5F5; }
+footer .email { color: #25F4EE; }
+.muted { color: #5A5A5A; font-size: 12px; margin-top: 12px; }
+
+@media (max-width: 600px) {
+  .logo { font-size: 42px; }
+  .tagline { font-size: 18px; }
+  header { padding: 60px 0 30px; }
+  section { padding: 40px 0; }
+}
 </style>
 </head>
 <body>
-<div class="card">
-<h1>ClipForge</h1>
-<p>ClipForge is a macOS app that helps creators assemble short-form videos from stock footage, voiceover, and captions, then upload them to their own TikTok account.</p>
-<p>Contact: <a class="email" href="mailto:maniforoughi2@gmail.com">maniforoughi2@gmail.com</a></p>
-<div class="links">
-<a class="btn" href="./privacy-policy/">Privacy Policy</a>
-<a class="btn" href="./terms-of-service/">Terms of Service</a>
-</div>
-</div>
+
+<header>
+  <div class="container">
+    <h1 class="logo">ClipForge</h1>
+    <p class="tagline">Short-form video assembly for Mac.</p>
+    <p style="color:#8A8A8A; max-width:560px; margin:8px auto 0; font-size:15px;">
+      Pull stock footage, layer voiceover and captions, render in 1080×1920, and send to your TikTok inbox in one flow.
+    </p>
+    <span class="platform">macOS 14 or later · Apple Silicon &amp; Intel</span>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>What ClipForge does</h2>
+    <div class="features">
+      <div class="feature">
+        <div class="icon">🎞️</div>
+        <h3>Stock footage on tap</h3>
+        <p>Search Pexels' library directly from the app and drop licensed clips into your timeline.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">✍️</div>
+        <h3>AI-written captions</h3>
+        <p>Generate hook-driven captions and on-screen text with OpenAI — no copywriting required.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">🎙️</div>
+        <h3>Voiceover &amp; music</h3>
+        <p>Add text-to-speech narration and pick a music bed from a folder of your own audio.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">📤</div>
+        <h3>One-click TikTok upload</h3>
+        <p>Send the rendered MP4 straight to your TikTok inbox as a draft — review and post from the official app.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Connect your TikTok account</h3>
+          <p>Sign in once via TikTok's OAuth flow. ClipForge stores your access token in the macOS Keychain — never on a server we operate.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Assemble your clip</h3>
+          <p>Pick stock footage, generate captions, add voiceover and music. ClipForge renders a 1080×1920 vertical MP4.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Send to TikTok</h3>
+          <p>Tap "Send to TikTok." The video lands in your TikTok inbox as a draft. Open the official TikTok app to review, edit, or publish.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Privacy, by design</h2>
+    <div class="privacy-card">
+      <h3>What ClipForge does — and doesn't — do with your data</h3>
+      <ul>
+        <li>Runs entirely on your Mac. No analytics, no telemetry, no ad SDKs.</li>
+        <li>Your TikTok access token, OpenAI key, and Pexels key live in the macOS Keychain on your device.</li>
+        <li>We don't operate servers that receive your personal data — communication with TikTok, OpenAI, and Pexels happens directly from your Mac.</li>
+        <li>Every upload is an explicit user action. No scheduling, batching, or background posting.</li>
+      </ul>
+      <p style="margin: 14px 0 0; font-size: 13px; color: #8A8A8A;">
+        Full details in the <a href="./privacy-policy/" style="color:#25F4EE;">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="links">
+      <a href="./privacy-policy/">Privacy Policy</a>
+      <a href="./terms-of-service/">Terms of Service</a>
+      <a href="mailto:maniforoughi2@gmail.com">Contact</a>
+    </div>
+    <p>Questions or data deletion: <a href="mailto:maniforoughi2@gmail.com" class="email">maniforoughi2@gmail.com</a></p>
+    <p class="muted">© 2026 Mani Foroughi · ClipForge is an independent project and is not affiliated with TikTok.</p>
+  </div>
+</footer>
+
 </body>
 </html>
